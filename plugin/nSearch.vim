@@ -1,1 +1,1 @@
-lua require("nSearch").setup()
+lua require("nsearch").setup()

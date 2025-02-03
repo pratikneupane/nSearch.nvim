@@ -11,12 +11,12 @@ M.embed_query = function(query)
 end
 
 M.search = function(query)
-  local extracted = require("nSearch.parser").extract_symbols(0)
+  local extracted = require("nsearch.parser").extract_symbols(0)
   local best_match = nil
   local best_score = -1
 
   for _, func in ipairs(extracted) do
-    local score = require("nSearch.utils").cosine_similarity(M.embed_query(query), M.embed_query(func))
+    local score = require("nsearch.utils").cosine_similarity(M.embed_query(query), M.embed_query(func))
     if score > best_score then
       best_score = score
       best_match = func
